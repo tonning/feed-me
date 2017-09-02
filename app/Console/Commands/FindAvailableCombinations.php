@@ -48,13 +48,13 @@ class FindAvailableCombinations extends Command
         $files = Storage::disk('datasets')->files('');
 
         if (! $files) {
-            return $this->error('No data sets found. Please place your data set files in the "/storage/app/datasets/" directory.');
+            return $this->error('No data sets found. Please place your data set files in the "/storage/datasets/" directory.');
         }
 
         $this->file = $this->choice('Which file would you like to check?', $files, 0);
 
         try {
-            ValidateDataSet::file(storage_path('app/datasets/' . $this->file));
+            ValidateDataSet::file(storage_path('datasets/' . $this->file));
         } catch (DataSetFileValidationException $exception) {
             return $this->error($exception->getMessage());
         }

@@ -50,7 +50,7 @@ return [
 
         'datasets' => [
             'driver' => 'local',
-            'root' => storage_path('app/datasets'),
+            'root' => storage_path('datasets'),
         ],
 
         'public' => [

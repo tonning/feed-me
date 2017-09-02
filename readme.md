@@ -6,6 +6,7 @@ You should also do some basic error checking on the format of the file, if its m
 ## Setup
 * Clone git repository `git clone https://github.com/tonning/feed-me.git`  
 * Change into directory `cd feed-me`  
+* Install composer dependencies `composer install`
 * Run `php artisan feed:me`  
 * Follow the prompt  
 
