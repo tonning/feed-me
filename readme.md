@@ -11,6 +11,8 @@ You should also do some basic error checking on the format of the file, if its m
 * Follow the prompt  
 
 ## Data Sets
+More data sets can be checked by placing them in the `/storage/datasets/` directory and running the `php artisan feed:me` command.
+
 The data set files must be in the following format:
 * First line must contain the total amount to be spend and nothing else. 
 * The total amount to be spend must have a dollar sign `$` in front of it.
