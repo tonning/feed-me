@@ -17,7 +17,9 @@ abstract class BaseValidationChecker
     {
         $this->content = $content;
 
-        $this->lines = $this->sanitizeContent(explode("\r\n", $content));
+        $lines = preg_split('/\n|\r\n?/', $content);
+
+        $this->lines = $this->sanitizeContent($lines);
     }
 
     /**

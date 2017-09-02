@@ -45,7 +45,7 @@ class FindAvailableCombinations extends Command
      */
     public function handle()
     {
-        $files = Storage::disk('datasets')->files('');
+        $files = Storage::disk('datasets')->files();
 
         if (! $files) {
             return $this->error('No data sets found. Please place your data set files in the "/storage/datasets/" directory.');
@@ -82,7 +82,7 @@ class FindAvailableCombinations extends Command
     {
         $content = Storage::disk('datasets')->get($file);
 
-        $lines = explode("\r\n", $content);
+        $lines = preg_split('/\n|\r\n?/', $content);
 
         return $this->sanitizeContent($lines);
     }
